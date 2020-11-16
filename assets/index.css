@@ -1,0 +1,255 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    height: 40px;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: #5555AA;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: white;
+    border-bottom: solid 2px gray;
+}
+
+.controls {
+    /* width: 100%; */
+    /* height: 50px; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* padding-left: 15px; */
+    flex: 1;
+    margin: 15px 15px;
+    position: relative;
+    border-radius: 10px;
+    border: solid 1px lightgray;
+    font-size: 0;
+    box-shadow: 1px 1px 4px lightgrey;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+}
+
+.mainContainer {
+    display: flex;
+    overflow: hidden;
+}
+
+.chartContainer {
+    /* flex: 1; */
+    /* width: 100%; */
+    /* margin: auto; */
+    /* width: 50%; */
+    /* height: 60%; */
+    display: flex;
+    padding: 15px;
+    /* height: 100%; */
+    border-radius: 10px;
+    border: solid 1px lightgray;
+    margin: 15px 15px;
+    box-shadow: 1px 1px 4px lightgrey;
+}
+
+.mapContainer {
+    position: relative;
+    /* flex: 1; */
+    height: 100%;
+    margin: 15px 15px;
+    width: 60%;
+    margin: auto;
+}
+
+#chart_div:empty:before {
+    content:attr(data-placeholder);
+    background-color:gray;
+}
+
+.mapContainer > div {
+    overflow: hidden;
+    border-radius: 10px;
+    border: solid 1px lightgray;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    outline: none;
+    background-color: lightblue;
+    font-size: 0;
+    box-shadow: 1px 1px 4px lightgrey;
+}
+
+#chart_div {
+    height: 100%;
+    min-width: 100%;
+    /* border: solid 1px lightgray; */
+    /* border-radius: 15px; */
+    overflow: hidden;
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: oblique;
+    margin: auto;
+    text-align: center;
+}
+
+.country {
+    fill: aquamarine;
+    fill: white;
+    cursor: pointer;
+    stroke: gray;
+    transition: fill .3s;
+    stroke-width: 0.5;
+}
+
+.country:hover {
+    fill: lightgreen;
+    fill: cadetblue;
+}
+
+.country.active {
+    fill: greenyellow;
+    fill: cornflowerblue;
+}
+
+#worldMap {
+    background-color: lightblue;
+}
+
+.controlLabel {
+    color: gray;
+    font-size: 16px;
+}
+
+.countryLabel {
+    margin-left: 5px;
+    color: cornflowerblue;
+    color: #5555AA;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.controlUnit {
+    height: 25%;
+    width: 25%;
+    display: inline-block;
+    /* min-height: 125px; */
+    vertical-align: middle;
+    margin: auto;
+    display: none;
+    font-weight: bold;
+    color: gray;
+}
+
+.invertDark {
+    filter: invert(1) hue-rotate(280deg);
+}
+
+@media only screen and (orientation: portrait) {
+    /* For mobile phones: */
+    .mapContainer, .chartContainer {
+      /* width: 100%; */
+      background-color:white;
+    }
+
+    .mainContainer {
+        flex-flow: column;
+    }
+
+    .controlUnit {
+        min-height: 80px;
+        margin: auto;
+        width: 50%;
+    }
+
+    .controls {
+        display: block;
+    }
+
+    .mapContainer {
+        flex: unset;
+        width: 85%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .controls {
+        flex-wrap: wrap;
+    }
+}
+
+.highlightedCountry {
+    left: 5px;
+    font-size: 14px;
+    position: absolute;
+    top: 5px;
+    z-index: 10;
+}
+
+.controlLabel {
+    font-family: Roboto;
+    font-size: 14px;
+    word-break: normal;
+    word-wrap: break-word;
+}
+
+.controlValue {
+    font-size: 30px;
+    display: inline;
+}
+
+.controlPlaceholder {
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: oblique;
+    margin: auto;
+}
+
+.increaseIcon {
+    height: 24px;
+    width: 24px !important;
+    display: inline-block;
+    margin-left: 3px;
+    vertical-align: sub;
+    display: none;
+}
+
+.decreaseIcon {
+    height: 24px;
+    width: 24px !important;
+    display: inline-block;
+    margin-left: 3px;
+    vertical-align: sub;
+    display: none;
+}
+
+.countryTotalRecoveries, .countryTotalRecoveries + span, .countryTotalRecoveries + span + span + div {
+    color: yellowgreen;
+}
+
+.countryTotalDeaths, .countryTotalDeaths + span, .countryTotalDeaths + span + span + div {
+    color: orangered;
+}
+
+.countryTotalConfirmedCases, .countryTotalConfirmedCases + span, .countryTotalConfirmedCases + span + span + div {
+    color: orange;
+}
+
+.countryTotalActiveCases, .countryTotalActiveCases + span, .countryTotalActiveCases + span + span, .countryTotalActiveCases + span + span + div {
+    color: deepskyblue;
+}
+
+.positive.overallTrend, .positive.overallTrend + div {
+    color: yellowgreen;
+}
+
+.neutral.overallTrend, .neutral.overallTrend + div {
+    color: orange;
+}
+
+.negative.overallTrend, .negative.overallTrend + div {
+    color: orangered;
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.0"> </script>
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+	<script src="assets/jquery.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src='https://unpkg.com/panzoom@9.2.4/dist/panzoom.min.js'></script>
+	<link rel="stylesheet" href="./assets/index.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<script src="./assets/util.js"> </script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+	<script src="./assets/fontawesome/js/all.js"></script>
+	<link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="header">
+		Covid Stats Worldwide
+	</div>
+	<div class="controls">
+		<!-- <div class="controlLabel">Country:</div> -->
+		<div class="controlPlaceholder">
+			Select a country on the map.
+		</div>
+		<div class="controlUnit">
+			<div class="countryLabel">India</div>
+		</div>
+		<div class="controlUnit">
+			<div class="countryTotalConfirmedCases controlValue"></div>
+			<span class="increaseIcon"><i class="increaseIcon far fa-arrow-alt-circle-up" style="display: inline-block;"></i></span>
+			<span class="decreaseIcon"><i class="decreaseIcon far fa-arrow-alt-circle-down" style="display: inline-block;"></i></span>
+			<div class="countryTotalConfirmedCasesLabel controlLabel"> confirmed cases</div>
+		</div>
+		<div class="controlUnit">
+			<div class="countryTotalActiveCases controlValue"></div>
+			<span class="increaseIcon"><i class="increaseIcon far fa-arrow-alt-circle-up" style="display: inline-block;"></i></span>
+			<span class="decreaseIcon"><i class="decreaseIcon far fa-arrow-alt-circle-down" style="display: inline-block;"></i></span>
+			<div class="countryTotalActiveCasesLabel controlLabel">active cases</div>
+		</div>
+		<div class="controlUnit">
+			<div class="countryTotalDeaths controlValue"></div>
+			<span class="increaseIcon"><i class="increaseIcon far fa-arrow-alt-circle-up" style="display: inline-block;"></i></span>
+			<span class="decreaseIcon"><i class="decreaseIcon far fa-arrow-alt-circle-down" style="display: inline-block;"></i></span>
+			<div class="countryTotalDeathsLabel controlLabel">deaths</div>
+		</div>
+		<div class="controlUnit">
+			<div class="countryTotalRecoveries controlValue"></div>
+			<span class="increaseIcon"><i class="increaseIcon far fa-arrow-alt-circle-up" style="display: inline-block;"></i></span>
+			<span class="decreaseIcon"><i class="decreaseIcon far fa-arrow-alt-circle-down" style="display: inline-block;"></i></span>
+			<div class="countryTotalRecoveriesLabel controlLabel">recoveries</div>
+		</div>
+		<div class="controlUnit">
+			<div class="countryNewCases controlValue"></div>
+			<div class="countryNewCasesLabel controlLabel">new cases today</div>
+		</div>
+		<div class="controlUnit">
+			<div class="countryNewDeaths controlValue"></div>
+			<div class="countryNewDeathsLabel controlLabel">new deaths today</div>
+		</div>
+		<div class="controlUnit">
+			<div class="lastTenDayDifference controlValue"></div>
+			<div class="lastTenDayDifferenceLabel controlLabel">new cases in the past 10 days</div>
+		</div>
+		<div class="controlUnit">
+			<div class="nextTenthDayActiveCount controlValue"></div>
+			<span class="increaseIcon"><i class="increaseIcon far fa-arrow-alt-circle-up" style="display: inline-block;"></i></span>
+			<span class="decreaseIcon"><i class="increaseIcon far fa-arrow-alt-circle-down" style="display: inline-block;"></i></span>
+			<div class="nextTenthDayActiveCountLabel controlLabel">active cases predicted after 10 days</div>
+		</div>
+		<div class="controlUnit">
+			<div class="overallTrend controlValue"></div>
+			<div class="overallTrendLabel controlLabel">Overall trend</div>
+		</div>
+	</div>
+	<div class="mainContainer">
+		<div class="mapContainer">
+			<span class="highlightedCountry"></span>
+		</div>
+		
+	</div>
+	<div class="chartContainer">
+		<div id="chart_div">
+			Select a country on the map.
+		</div>
+	</div>
+</body>
+<script src="./assets/index.js"> </script>
+
+</html>

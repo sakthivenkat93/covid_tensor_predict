@@ -1,0 +1,4 @@
+loadSVG();
+// loadData();
+
+registerCountryClick()
