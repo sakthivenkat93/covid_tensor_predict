@@ -7,3 +7,5 @@ A google charts - Line chart to visualize the time series data.
 Bootstrap 4 used for layout.
 Map SVG sampled from mapsvg.com. Modified to suit this role.
 Includes svg-pan-zoom library for enabling interaction with the map.
+
+Sourced API URL: https://covid19-api.org/api/
